@@ -1,4 +1,4 @@
-export ROS_DISTRO=foxy
+export ROS_DISTRO=iron
 
 cross-colcon-build() {
     if [ ! "$(ls -A /home/develop/rootfs/)" ]; then
