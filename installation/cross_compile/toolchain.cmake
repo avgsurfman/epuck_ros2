@@ -10,13 +10,14 @@ set(CMAKE_SYSROOT /home/develop/rootfs)
 
 # https://github.com/eProsima/Fast-DDS/issues/1262
 set(CMAKE_CXX_FLAGS "-latomic")
+set(CMAKE_CFLAGS= "-march=armv8-a+crc -mtune=cortex-a72 -ftree-vectorize -O2 -pipe -fomit-frame-pointer")
 
 set(CMAKE_FIND_ROOT_PATH /home/develop/ros2_ws/install)
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
-set(PYTHON_SOABI cpython-37m-arm-linux-gnueabihf)
+set(PYTHON_SOABI cpython-311m-arm-linux-gnueabihf)
 
 # https://github.com/foonathan/memory/pull/60
 set(CMAKE_CROSSCOMPILING_EMULATOR /usr/bin/qemu-arm-static)
