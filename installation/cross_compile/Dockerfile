@@ -11,7 +11,10 @@ RUN apt-get update && apt-get install -y \
     python3-numpy \
     sshfs \
     rsync \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* && \
+    # prevents the container script from hanging on timezone config
+    DEBIAN_FRONTEND=noninteractive \
+    TZ=Asia/Singapore \
 RUN echo user_allow_other >> /etc/fuse.conf
 
 # Add user
